@@ -1,0 +1,14 @@
+spring:
+  kafka:
+    bootstrap-servers: ${spring.embedded.kafka.brokers}
+    consumer:
+      auto-offset-reset: earliest
+      group-id: group.id
+      auto-commit: false
+      topic: consumer.t
+      max-poll-records: 30
+    producer:
+      batch-size: 2048
+      topic: producer.t
+      group-id: group
+      auto-commit: false
